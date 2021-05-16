@@ -1,20 +1,15 @@
-# modules
+# get modules
 import requests
 
-# request for data
-def weatherInfo(query):
-   # Enter your API key here
-   ApiKey = " 324eae13d8d2460871b2965b1eecb4fa"
-   # Open Weather API
-   WeatherSite = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}?"
-   
-# display results
-def DisplayResults(weathers,city):
-   #print("City name and temperature")
-   #print("Weather info)
-   
+#request info
+def WeatherInfo(query):
+   # API key 
+   APIkey = "324eae13d8d2460871b2965b1eecb4fa"
+   # weatherURL variable to store url
+   weatherURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}?"
+   complete_url = weatherURL + "appid=" + APIkey + "&" + query
+   # response object
+   res=requests.get(complete_url);
+   return res.json();
+
 # main function
-def main():
-  #allow user to enter multi city/zip code queries
-  #
-	
